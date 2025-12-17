@@ -43,23 +43,23 @@ const HeaderData: HeaderData[] = [
 
 
 export default function Header() {
-    return <header className="absolute top-0 left-0 right-0 z-50 px-12 w-full text-white">
-        <div className="flex items-center justify-between py-5 mt-5">
+    return <header className="absolute top-0 left-0 right-0 z-50 px-12 w-full text-white bg-linear-to-b from-black/80 to-transparent">
+        <div className="flex items-center justify-between py-5 mt-3">
             <div>
                 <Link href={'/'}>
                     <Image src={'/favicon.svg'} alt="Rockstar Games" width={32} height={32} loading="lazy" />
                 </Link>
             </div>
             <nav>
-                <ul className="flex items-center gap-0.5">
+                <ul className="flex items-center gap-0.5 ml-28">
                     <li>
-                        <Button variant={'ghost'} className="rounded-2xl text-sm font-bold uppercase gap-1 px-6 py-2 hover:bg-white/10 hover:text-white">Games
+                        <Button variant={'ghost'} className={"rounded-3xl text-base font-semibold text-white uppercase gap-1 px-6 h-10 hover:bg-white/10 hover:text-white"}>Games
                             <ChevronDown size={18} />
                         </Button>
                     </li>
                     {HeaderData.map((item) => (
                         <li key={item.label}>
-                            <Link href={item.href} className="flex items-center gap-1 font-bold text-sm uppercase hover:bg-white/10 px-6 py-2 rounded-2xl transition-colors" target={item.external ? '_blank' : '_self'}>{item.label} {item.icon}</Link>
+                            <Link href={item.href} className="flex items-center gap-1 font-semibold text-base uppercase hover:bg-white/10 px-6 h-10 rounded-4xl transition-colors" target={item.external ? '_blank' : '_self'}>{item.label} {item.icon}</Link>
                         </li>
                     ))}
                 </ul>
