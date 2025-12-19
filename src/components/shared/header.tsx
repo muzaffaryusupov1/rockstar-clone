@@ -1,52 +1,16 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, ChevronDown, SearchIcon, User2Icon } from "lucide-react";
+import { SearchIcon, User2Icon } from "lucide-react";
 import { Button } from "../ui/button";
-import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "../ui/drawer";
-
-
-interface HeaderData {
-    label: string;
-    href: string;
-    icon: React.ReactNode;
-    external?: boolean;
-}
-
-const HeaderData: HeaderData[] = [
-    {
-        label: "Newswire",
-        href: "/newswire",
-        icon: null,
-    },
-    {
-        label: "Videos",
-        href: "/videos",
-        icon: null,
-    },
-    {
-        label: "Downloads",
-        href: "/downloads",
-        icon: null,
-    },
-    {
-        label: 'Store',
-        href: 'https://store.rockstargames.com',
-        icon: <ArrowUpRight size={16} />,
-        external: true,
-    },
-    {
-        label: "Support",
-        href: "https://support.rockstargames.com/",
-        icon: <ArrowUpRight size={16} />,
-        external: true,
-    }
-]
-
+import { headerData } from "@/constants/data";
+import GamesDrawer from "./games-drawer";
 
 export default function Header() {
     return (
         <>
-            <header className="absolute top-0 left-0 right-0 z-100 px-12 w-full text-white bg-linear-to-b from-black/80 to-transparent">
+            <header className="absolute top-0 left-0 right-0 z-[100] pointer-events-auto px-12 w-full text-white bg-linear-to-b from-black/80 to-transparent">
                 <div className="flex items-center justify-between py-5 mt-3">
                     <div>
                         <Link href={'/'}>
@@ -56,34 +20,9 @@ export default function Header() {
                     <nav>
                         <ul className="flex items-center gap-0.5 ml-28">
                             <li>
-                                <Button variant={'ghost'} className={"rounded-3xl text-base font-semibold text-white uppercase gap-1 px-6 h-10 hover:bg-white/10 hover:text-white"}>
-                                    Games <ChevronDown size={18} />
-                                </Button>
-                                <Drawer direction="top">
-                                    <DrawerTrigger asChild>
-
-                                    </DrawerTrigger>
-                                    <DrawerContent className="mt-[88px] h-screen bg-black/90 text-white border-white/10">
-                                        <div className="container mx-auto py-10">
-                                            <DrawerHeader>
-                                                <DrawerTitle className="text-white text-3xl">Games</DrawerTitle>
-                                                <DrawerDescription className="text-neutral-400">
-                                                    Explore our full collection of games.
-                                                </DrawerDescription>
-                                            </DrawerHeader>
-                                            <div className="p-4">
-                                                <p>Rockstar Games titles will appear here...</p>
-                                            </div>
-                                            <DrawerFooter>
-                                                <DrawerClose asChild>
-                                                    <Button variant="outline" className="border-white/20 hover:bg-white/10 text-white">Cancel</Button>
-                                                </DrawerClose>
-                                            </DrawerFooter>
-                                        </div>
-                                    </DrawerContent>
-                                </Drawer>
+                                <GamesDrawer />
                             </li>
-                            {HeaderData.map((item) => (
+                            {headerData.map((item) => (
                                 <li key={item.label}>
                                     <Link href={item.href} className="flex items-center gap-1 font-semibold text-base uppercase hover:bg-white/10 px-6 h-10 rounded-4xl transition-colors" target={item.external ? '_blank' : '_self'}>{item.label} {item.icon}</Link>
                                 </li>
