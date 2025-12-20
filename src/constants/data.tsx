@@ -97,3 +97,34 @@ export const gamesImages = [
         href: '#',
     }
 ]
+
+export const newsItems = [
+    {
+        id: 1,
+        image: "/about-section/image-2.jpg",
+        category: "GTA ONLINE",
+        title: "The Futuristic New Progen Luiva Supercar Arrives for the Holidays in GTA Online",
+        date: "December 18, 2025",
+    },
+    {
+        id: 2,
+        image: "/about-section/image-3.jpg",
+        category: "GTA ONLINE",
+        title: "Get Early Access to Claim the New Vapid FMJ MK V Supercar with GTA+",
+        date: "December 10, 2025",
+    },
+    {
+        id: 3,
+        image: "/about-section/image-4.jpg",
+        category: "GTA ONLINE",
+        title: "GTA Online: A Safehouse in the Hills Now Available",
+        date: "December 10, 2025",
+    },
+    {
+        id: 4,
+        image: "/about-section/image-5.jpg",
+        category: "ROCKSTAR GAMES",
+        title: "New at the Rockstar Store: Apparel, Collectibles, and More",
+        date: "December 5, 2025",
+    },
+];
