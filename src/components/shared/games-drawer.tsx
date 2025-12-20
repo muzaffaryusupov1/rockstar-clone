@@ -1,23 +1,20 @@
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/button";
-import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from "../ui/drawer";
+import { Drawer, DrawerContent, DrawerHeader, DrawerOverlay, DrawerTitle } from "../ui/drawer";
 import { gamesImages } from "@/constants/data";
 import Image from "next/image";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { useState } from "react";
 
-export default function GamesDrawer() {
-    const [open, setOpen] = useState<boolean>(false)
+interface GamesDrawerProps {
+    open: boolean;
+    onOpenChange: (open: boolean) => void;
+}
 
+export default function GamesDrawer({ open, onOpenChange }: GamesDrawerProps) {
     return (
-        <Drawer open={open} direction="top" modal={true} autoFocus={false} onOpenChange={setOpen}>
-            <DrawerTrigger>
-                <Button variant={'ghost'} className={"rounded-3xl text-base font-semibold text-white uppercase gap-1.5 px-6 h-10 hover:bg-white/10 hover:text-white"}>
-                    Games <ChevronDown className={cn('transition-transform ease-out duration-300 w-5! h-5!', open ? 'rotate-180' : '')} />
-                </Button>
-            </DrawerTrigger>
-            <DrawerContent className="mt-[88px] h-[580px] bg-black/95 backdrop-blur-md text-white border-white/10 z-50 focus:outline-none">
+        <Drawer open={open} direction="top" modal={true} autoFocus={false}>
+            <DrawerOverlay className="z-60 bg-black/10" onClick={() => onOpenChange(false)} />
+            <DrawerContent className="mt-[88px] h-[580px] bg-black/95 backdrop-blur-md text-white border-white/10 z-70 focus:outline-none">
                 <div className="container mx-auto py-10">
                     <DrawerHeader className="flex flex-row items-center justify-between">
                         <DrawerTitle className="text-white text-3xl font-semibold">Featured Games</DrawerTitle>
