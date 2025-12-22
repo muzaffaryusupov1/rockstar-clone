@@ -1,6 +1,7 @@
 import Header from "@/components/shared/header";
 import BannerCarousel from "./components/BannerCarousel";
 import AboutSection from "./components/AboutSection";
+import VideoSection from "./components/VideoSection";
 
 export default function Home() {
     return (
@@ -10,6 +11,8 @@ export default function Home() {
                 <BannerCarousel />
                 {/*  About Section */}
                 <AboutSection />
+                {/* Video Section */}
+                <VideoSection />
             </main>
         </>
     )

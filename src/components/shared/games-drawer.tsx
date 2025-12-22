@@ -23,7 +23,7 @@ export default function GamesDrawer({ open, onOpenChange }: GamesDrawerProps) {
                     <div className="p-4">
                         <div className="grid grid-cols-5 gap-5">
                             {gamesImages.map((image) => (
-                                <Link key={image.id} href={image.href} className="relative aspect-[3/4] hover:scale-[1.03] transition-transform ease-out duration-300">
+                                <Link key={image.id} href={image.href} className="relative aspect-3/4 hover:scale-[1.03] transition-transform ease-out duration-300">
                                     <Image src={image.src} alt={image.alt} fill className="object-cover border border-white/15 rounded-sm overflow-hidden" priority={false} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" loading="lazy" />
                                 </Link>
                             ))}

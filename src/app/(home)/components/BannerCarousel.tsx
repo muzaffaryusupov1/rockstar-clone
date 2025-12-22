@@ -94,7 +94,7 @@ export default function BannerCarousel() {
                 <CarouselContent className="gap-0 m-0!">
                     {bannerImages.map((banner, index) => (
                         <CarouselItem key={banner.id} className="ml-0! pl-0!">
-                            <div className="relative w-full h-[90vh]">
+                            <div className="relative w-full h-[90vh] max-md:h-[70vh] max-sm:h-[60vh]">
                                 <Image src={banner.src} alt={banner.alt} fill className="object-cover" priority={banner.id === 1} />
                                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
