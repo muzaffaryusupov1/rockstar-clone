@@ -44,6 +44,9 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
+  /* my colors */
+  --foundry-global-color-gray-adaptive-600: #989898;
 }
 
 :root {
@@ -245,4 +248,21 @@ button {
   animation-direction: both;
   animation-iteration-count: 2;
   color: #dc3744 !important;
+}
+
+.video-section-link {
+  @apply text-neutral-300 flex justify-between items-center gap-2 font-bold -tracking-[0.005em] text-lg leading-[150%]
+}
+
+.video-section-link.games {
+  @apply text-[var(--foundry-global-color-gray-adaptive-600)]
+}
+
+.video-section-link.games::after {
+  content: '/';
+  @apply p-[calc(4px+1.125)] text-[var(--foundry-global-color-gray-adaptive-600)]
+}
+
+.video-section-link.games a:hover {
+  @apply underline
 }

@@ -6,6 +6,7 @@ import { Pause, Play } from "lucide-react";
 import Image from "next/image";
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
+import VideoSectionContent from "@/components/shared/video-section-content";
 
 export default function VideoSection() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -34,7 +35,7 @@ export default function VideoSection() {
     };
 
     return (
-        <div ref={containerRef} className="relative h-[300vh]">
+        <div ref={containerRef} className="relative h-[250vh]">
             <div className="sticky top-0 h-screen overflow-hidden">
                 <motion.div style={{ opacity: videoOpacity }} className="w-full h-full relative">
                     <video ref={videoRef} className="w-full h-full object-cover" playsInline autoPlay muted loop poster="/videos/video-posters/gta-online.webp">
@@ -57,14 +58,9 @@ export default function VideoSection() {
 
                 <motion.section
                     style={{ opacity: contentOpacity, y: contentY }}
-                    className="absolute inset-0 flex items-center justify-center text-white"
+                    className="absolute inset-0"
                 >
-                    <div className="max-w-4xl px-6 text-center">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6">Experience GTA Online</h1>
-                        <p className="text-lg md:text-xl text-gray-200">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex expedita ad assumenda accusantium corrupti eveniet dignissimos perferendis vero molestias, illo doloremque eaque voluptatem est. Assumenda sint nobis error dignissimos quibusdam?
-                        </p>
-                    </div>
+                    <VideoSectionContent />
                 </motion.section>
             </div>
         </div>
