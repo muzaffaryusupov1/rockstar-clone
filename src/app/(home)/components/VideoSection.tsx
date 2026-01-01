@@ -19,8 +19,9 @@ export default function VideoSection() {
     });
 
     const videoOpacity = useTransform(scrollYProgress, [0.2, 0.6], [1, 0]);
+    const videoBlur = useTransform(scrollYProgress, [0.2, 0.6], ["blur(0px)", "blur(20px)"]);
     const contentOpacity = useTransform(scrollYProgress, [0.4, 0.8], [0, 1]);
-    const contentY = useTransform(scrollYProgress, [0.4, 0.8], [50, 0]);
+    const contentY = useTransform(scrollYProgress, [0.2, 0.8], ["100%", "0%"]);
 
     const togglePlay = () => {
         if (videoRef.current) {
@@ -35,9 +36,9 @@ export default function VideoSection() {
     };
 
     return (
-        <div ref={containerRef} className="relative h-[250vh]">
+        <div ref={containerRef} className="relative h-[200vh]">
             <div className="sticky top-0 h-screen overflow-hidden">
-                <motion.div style={{ opacity: videoOpacity }} className="w-full h-full relative">
+                <motion.div style={{ opacity: videoOpacity, filter: videoBlur }} className="w-full h-full relative">
                     <video ref={videoRef} className="w-full h-full object-cover" playsInline autoPlay muted loop poster="/videos/video-posters/gta-online.webp">
                         {/* desktop */}
                         <source src="/videos/gta-online.mp4" type="video/mp4" />
@@ -56,9 +57,10 @@ export default function VideoSection() {
                     <div style={{ background: "linear-gradient(rgba(0, 0, 0, 0) 0%, 70%, rgb(0, 0, 0) 100%)", backdropFilter: "none" }} className="absolute inset-0 z-0 pointer-events-none"></div>
                 </motion.div>
 
+                {/* implement line gradient to section */}
                 <motion.section
                     style={{ opacity: contentOpacity, y: contentY }}
-                    className="absolute inset-0"
+                    className="absolute inset-0 bg-linear-to-b from-transparent to-black"
                 >
                     <VideoSectionContent />
                 </motion.section>

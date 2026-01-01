@@ -128,3 +128,42 @@ export const newsItems = [
         date: "December 5, 2025",
     },
 ];
+
+
+export const gtaOnlineContent = [
+    {
+        id: 1,
+        description: "The premium Membership for GTA Online players.",
+        button: "Learn More",
+        href: "#",
+        image: "/gta-online-posters/img1.jpg",
+        subImage: "/gta-online-posters/gta-plus.svg",
+        subImageClass: "w-auto h-[90px]",
+        buttonClass: "video-section-button bg-[#FCAF17] text-black hover:bg-[#FCAF17]/70!",
+    },
+    {
+        id: 2,
+        description: "Create your own personalized license plates.",
+        button: "Create Now",
+        href: "#",
+        image: "/gta-online-posters/img2.webp",
+        buttonClass: "video-section-button bg-neutral-500/50 hover:bg-neutral-500/70! text-white opacity-80 group-hover:opacity-100",
+    },
+    {
+        id: 3,
+        button: "Watch Trailer",
+        href: "#",
+        image: "/gta-online-posters/img3.webp",
+        subImage: "/header/gta-online.svg",
+        subImageClass: "w-[220px] h-[120px]",
+        buttonClass: "video-section-button bg-[#CBB45A] hover:bg-[#CBB45A]/70! text-black opacity-80 group-hover:opacity-100",
+    },
+    {
+        id: 4,
+        description: "See all the challenges that you've completed in your GTA Online Career.",
+        button: "View Progress",
+        href: "#",
+        image: "/gta-online-posters/img4.webp",
+        buttonClass: "video-section-button bg-neutral-500/50 hover:bg-neutral-500/70! text-white opacity-80 group-hover:opacity-100",
+    },
+]

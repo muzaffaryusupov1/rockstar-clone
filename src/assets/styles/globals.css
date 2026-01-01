@@ -266,3 +266,7 @@ button {
 .video-section-link.games a:hover {
   @apply underline
 }
+
+.video-section-button {
+  @apply px-6 h-[60px] rounded-full text-base font-medium
+}
