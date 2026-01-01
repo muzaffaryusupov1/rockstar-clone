@@ -2,6 +2,8 @@ import Header from "@/components/shared/header";
 import BannerCarousel from "./components/BannerCarousel";
 import AboutSection from "./components/AboutSection";
 import VideoSection from "./components/VideoSection";
+import { videoSectionContent } from "@/constants/data";
+import GameLibrarySection from "./components/GameLibrarySection";
 
 export default function Home() {
     return (
@@ -12,7 +14,13 @@ export default function Home() {
                 {/*  About Section */}
                 <AboutSection />
                 {/* Video Section */}
-                <VideoSection />
+                {
+                    videoSectionContent.map((item: any) => (
+                        <VideoSection sectionVideo={item.sectionVideo} sectionVideoMobile={item.sectionVideoMobile} sectionVideoPoster={item.sectionVideoPoster} sectionVideoStopImage={item.sectionVideoStopImage} topDataCards={item.topDataCards} topData={item.topData} key={item.id} />
+                    ))
+                }
+                {/* Game Library Section */}
+                <GameLibrarySection />
             </main>
         </>
     )

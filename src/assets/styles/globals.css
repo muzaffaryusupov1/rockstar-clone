@@ -270,3 +270,24 @@ button {
 .video-section-button {
   @apply px-6 h-[60px] rounded-full text-base font-medium
 }
+
+/* Infinite Scroll Animation */
+@keyframes scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 120s linear infinite;
+  width: max-content;
+}
+
+.animate-scroll-slow {
+  animation: scroll 180s linear infinite;
+  width: max-content;
+}
