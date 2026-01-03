@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { Play } from "lucide-react";
 import { Card, CardContent, CardDescription } from "../ui/card";
 import { cn } from "@/lib/utils";
+import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 
 interface Props {
     topData: any;
@@ -12,9 +13,9 @@ interface Props {
 
 export default function VideoSectionContent({ topData, topDataCards }: Props) {
     return (
-        <div className="w-full px-6 py-10 md:px-20 lg:px-40">
+        <div className="w-full">
             <div className="max-w-[1280px] mx-auto flex flex-col">
-                <div className="flex flex-col md:flex-row items-center md:items-center justify-center md:justify-start gap-8 md:gap-16 lg:gap-20 text-center md:text-left">
+                <div className="flex flex-col md:flex-row items-center md:items-center justify-center md:justify-start gap-8 md:gap-16 lg:gap-20 text-center md:text-left px-6 py-10 md:px-20 lg:px-40">
                     <div className="relative overflow-hidden w-[150px] h-[150px] md:w-[200px] md:h-[200px] shrink-0">
                         <Image src={topData.image} alt="gta-online" fill loading="lazy" className="object-contain" />
                     </div>
@@ -46,7 +47,7 @@ export default function VideoSectionContent({ topData, topDataCards }: Props) {
                         </div>
                     </div>
                 </div>
-                <div className="mt-12 md:mt-20">
+                <div>
                     <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-10 tracking-tight text-center md:text-left">Jump Into {topData.title}</h1>
                     <div className="grid grid-cols-4 gap-6 max-lg:grid-cols-2 max-md:hidden">
                         {topDataCards.map((item: any) => (
@@ -83,41 +84,49 @@ export default function VideoSectionContent({ topData, topDataCards }: Props) {
                             </Link>
                         ))}
                     </div>
-                    {/* Mobile View horizontal scroll */}
-                    <div className="md:hidden flex overflow-x-scroll gap-2 scrollbar-hide w-full">
-                        {topDataCards.map((item: any) => (
-                            <Link href={item.href} key={item.id} className="block w-[350px]">
-                                <Card className="p-0 bg-transparent border-none w-[350px] h-[530px]">
-                                    <CardContent className="p-0 relative group">
-                                        <div className="relative overflow-hidden w-full h-[530px]">
-                                            {
-                                                item.isGradient && (
-                                                    <div className="absolute inset-0 bg-linear-to-t from-black to-transparent z-10"></div>
-                                                )
-                                            }
-                                            <Image src={item.image} alt="gta-online" fill loading="lazy" className="object-cover select-none opacity-80 group-hover:opacity-100 transition-all duration-300 rounded-md" />
-                                            <div className={cn("absolute inset-0 m-auto z-20 aspect-video w-auto h-[90px]", item.subImageClass)}>
-                                                {
-                                                    item.subImage && (
-                                                        <Image src={item.subImage} alt="gta-plus" fill loading="lazy" className="object-contain select-none" />
-                                                    )
-                                                }
-                                            </div>
-                                        </div>
-                                        <div className="absolute bottom-0 left-0 right-0 z-20 flex flex-col gap-2 items-center justify-center pb-10 px-4">
-                                            {
-                                                item.description && (
-                                                    <CardDescription className="text-center text-white text-base md:text-lg font-medium tracking-tight">{item.description}</CardDescription>
-                                                )
-                                            }
-                                            <Button className={cn("video-section-button mt-2 font-bold px-8! transition-all duration-300", item.buttonClass)}>
-                                                {item.button}
-                                            </Button>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            </Link>
-                        ))}
+                    {/* Mobile View Carousel */}
+                    <div className="md:hidden ml-6">
+                        <Carousel className="w-full" opts={{ align: "start", loop: false }}>
+                            <CarouselContent className="-ml-4 pb-4 gap-4">
+                                {topDataCards.map((item: any) => (
+                                    <CarouselItem key={item.id} className="pl-4! basis-[85%]">
+                                        <Link href={item.href} className="block">
+                                            <Card className="p-0 bg-transparent border-none aspect-[0.66] h-[530px]">
+                                                <CardContent className="p-0 relative group h-full">
+                                                    <div className="relative overflow-hidden w-full h-full">
+                                                        {item.isGradient && (
+                                                            <div className="absolute inset-0 bg-linear-to-t from-black to-transparent z-10"></div>
+                                                        )}
+                                                        <Image
+                                                            src={item.image}
+                                                            alt="gta-online"
+                                                            fill
+                                                            loading="lazy"
+                                                            className="object-cover select-none opacity-80 group-hover:opacity-100 transition-all duration-300 rounded-md"
+                                                        />
+                                                        <div className={cn("absolute inset-0 m-auto z-20 aspect-video w-auto h-[90px]", item.subImageClass)}>
+                                                            {item.subImage && (
+                                                                <Image src={item.subImage} alt="logo" fill loading="lazy" className="object-contain select-none" />
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                    <div className="absolute bottom-0 left-0 right-0 z-20 flex flex-col gap-2 items-center justify-center pb-10 px-4">
+                                                        {item.description && (
+                                                            <CardDescription className="text-center text-white text-base font-medium tracking-tight">
+                                                                {item.description}
+                                                            </CardDescription>
+                                                        )}
+                                                        <Button className={cn("video-section-button mt-2 font-bold px-8! transition-all duration-300", item.buttonClass)}>
+                                                            {item.button}
+                                                        </Button>
+                                                    </div>
+                                                </CardContent>
+                                            </Card>
+                                        </Link>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                        </Carousel>
                     </div>
                 </div>
             </div>

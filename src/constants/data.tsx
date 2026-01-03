@@ -275,7 +275,7 @@ export const videoSectionContent = [
     {
         id: 1,
         sectionVideo: "/videos/gta-online.mp4",
-        sectionVideoMobile: "/videos/video/gta-online-mobile.mp4",
+        sectionVideoMobile: "/videos/gta-online-mobile.mp4",
         sectionVideoPoster: "/videos/video-posters/gta-online.webp",
         sectionVideoStopImage: "/videos/video-posters/gta-online.webp",
         videoSectionContent: gtaOnlineContent,
@@ -286,7 +286,7 @@ export const videoSectionContent = [
     {
         id: 2,
         sectionVideo: "/videos/red-dead-redemption.mp4",
-        sectionVideoMobile: "/videos/video/red-dead-mobile.mp4",
+        sectionVideoMobile: "/videos/red-dead-mobile.mp4",
         sectionVideoPoster: "/videos/video-posters/red-dead-redemption.webp",
         sectionVideoStopImage: "/videos/video-posters/red-dead-redemption.webp",
         videoSectionContent: redDeadContent,

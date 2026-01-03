@@ -324,3 +324,9 @@ button {
   object-fit: cover;
   overflow: hidden;
 }
+
+@media (max-width: 768px) {
+  .vi4uz51 {
+    height: 450px;
+  }
+}
