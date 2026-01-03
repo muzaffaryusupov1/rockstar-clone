@@ -4,6 +4,7 @@ import AboutSection from "./components/AboutSection";
 import VideoSection from "./components/VideoSection";
 import { videoSectionContent } from "@/constants/data";
 import GameLibrarySection from "./components/GameLibrarySection";
+import StoreSection from "./components/StoreSection";
 
 export default function Home() {
     return (
@@ -21,6 +22,8 @@ export default function Home() {
                 }
                 {/* Game Library Section */}
                 <GameLibrarySection />
+                {/* Store Section */}
+                <StoreSection />
             </main>
         </>
     )
