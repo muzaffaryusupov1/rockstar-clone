@@ -291,3 +291,36 @@ button {
   animation: scroll 180s linear infinite;
   width: max-content;
 }
+
+
+.hg5jwy4 {
+  position: absolute;
+  inset: 0;
+  bottom: -1px;
+}
+
+.hg5jwy6 {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, 70%, rgba(0, 0, 0, 1) 100%);
+}
+
+.vi4uz50 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background: var(--foundry-global-color-black-static-100-43aea341);
+  overflow: hidden;
+  align-content: flex-end;
+  width: 100vw;
+  margin: 0;
+  mask-image: linear-gradient(180deg, rgb(0, 0, 0) 100%, rgba(0, 0, 0, 0) 100%);
+}
+
+.vi4uz51 {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  max-height: 100vw;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}

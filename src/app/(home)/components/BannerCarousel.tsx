@@ -103,25 +103,27 @@ export default function BannerCarousel() {
                                     animate={selectedIndex === index ? "rest" : "moved"}
                                     variants={animationVariants}
                                     transition={{ duration: 1 }}
-                                    className="absolute bottom-0 left-0 right-0 p-20 z-10 container mx-auto flex items-center gap-10"
+                                    className="absolute bottom-0 left-0 right-0 p-6 md:p-20 z-10 container mx-auto flex items-center md:gap-10 gap-4"
                                 >
-                                    <Image src={banner.subImage} alt={banner.alt} width={250} height={250} className="object-contain" />
-                                    <div className="flex flex-col gap-2">
-                                        <div className="flex flex-col gap-0.5 mb-2">
-                                            <h2 className="text-xl font-bold text-neutral-200 tracking-tight uppercase drop-shadow-md">{banner.title}</h2>
-                                            <p className="text-5xl tracking-wide capitalize text-white font-bold drop-shadow-sm max-w-2xl">{banner.subtitle}</p>
+                                    <div className="hidden md:block">
+                                        <Image src={banner.subImage} alt={banner.alt} width={250} height={250} className="object-contain" />
+                                    </div>
+                                    <div className="flex flex-col gap-4 md:gap-2 w-full">
+                                        <div className="flex flex-col gap-1 md:gap-0.5 mb-2">
+                                            <h2 className="text-sm md:text-xl font-bold text-neutral-200 tracking-tight uppercase drop-shadow-md">{banner.title}</h2>
+                                            <p className="text-3xl md:text-5xl tracking-wide capitalize text-white font-bold drop-shadow-sm max-w-2xl leading-tight">{banner.subtitle}</p>
                                         </div>
-                                        <div className="flex items-center gap-2">
-                                            <Button className={cn("bg-[#E8D27B] hover:bg-[#E8D27B]/80 transition-all duration-300 text-black px-6! h-16 rounded-full text-lg font-bold", banner.tag === 'gta-6' && 'bg-[#FFB0C4] hover:bg-[#FFB0C4]/80')}>
-                                                <Play className="ml-2" fill="black" size={30} /> Watch Trailer
+                                        <div className="flex items-center gap-3 md:gap-2">
+                                            <Button className={cn("bg-[#E8D27B] hover:bg-[#E8D27B]/80 transition-all duration-300 text-black px-5 md:px-6! h-12 md:h-16 rounded-full text-base md:text-lg font-bold flex-1 md:flex-none", banner.tag === 'gta-6' && 'bg-[#FFB0C4] hover:bg-[#FFB0C4]/80')}>
+                                                <Play className="mr-2 md:ml-2 size-5 md:size-[30px]" fill="black" /> Watch Trailer
                                             </Button>
-                                            <Button className="transition-all duration-300 px-9! rounded-full bg-transparent border-[0.5px] border-neutral-500 text-white h-16 hover:bg-neutral-200/20 hover:text-white hover:border-neutral-300 text-lg font-bold" variant={'outline'}>
+                                            <Button className="transition-all duration-300 px-5 md:px-9! rounded-full bg-transparent border-[0.5px] border-neutral-500 text-white h-12 md:h-16 hover:bg-neutral-200/20 hover:text-white hover:border-neutral-300 text-base md:text-lg font-bold flex-1 md:flex-none" variant={'outline'}>
                                                 {banner.tag === 'gta-6' ? "Explore Leonida" : "Learn More"}
                                             </Button>
                                         </div>
                                     </div>
                                 </motion.div>
-                                <div className="absolute bottom-24 right-1/4 z-10">
+                                <div className="absolute bottom-24 right-1/4 z-10 hidden md:block">
                                     <CustomPagination
                                         scrollSnaps={scrollSnaps}
                                         selectedIndex={selectedIndex}

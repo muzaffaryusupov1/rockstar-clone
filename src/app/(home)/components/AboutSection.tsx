@@ -108,8 +108,8 @@ export default function AboutSection() {
             <div className="md:hidden space-y-6">
                 <div className="space-y-6">
                     <Carousel className="w-full" opts={{ loop: false, align: "start" }}>
-                        <CarouselContent className="ml-12">
-                            <CarouselItem className="pl-4 basis-[50%] md:basis-[40%]">
+                        <CarouselContent className="ml-0! pl-4">
+                            <CarouselItem className="pl-4 basis-[85%] md:basis-[40%]">
                                 <Link href="#" className="block h-full">
                                     <Card className="p-0 border-0 bg-transparent group h-full flex flex-col max-sm:gap-0">
                                         <CardHeader className="p-0 shrink-0">
@@ -122,15 +122,15 @@ export default function AboutSection() {
                                                 />
                                             </div>
                                         </CardHeader>
-                                        <CardContent className="bg-neutral-900 max-md:p-[32px] p-6 rounded-b-lg group-hover:bg-neutral-800 transition-colors duration-300 flex-1">
+                                        <CardContent className="bg-neutral-900 p-6 rounded-b-lg group-hover:bg-neutral-800 transition-colors duration-300 flex-1">
                                             <div>
-                                                <h2 className="max-md:text-xs text-sm font-semibold uppercase text-neutral-300/90 mb-2">
+                                                <h2 className="text-xs font-semibold uppercase text-neutral-300/90 mb-2">
                                                     GRAND THEFT AUTO VI
                                                 </h2>
-                                                <CardDescription className="max-md:text-lg text-xl font-semibold text-white/85 mb-3 font-sans tracking-wide leading-tight line-clamp-3">
+                                                <CardDescription className="text-xl font-semibold text-white/85 mb-3 font-sans tracking-wide leading-tight line-clamp-3">
                                                     Grand Theft Auto VI is Now Set to Launch November 19, 2026
                                                 </CardDescription>
-                                                <span className="max-md:text-xs text-sm font-semibold text-muted-foreground">
+                                                <span className="text-xs font-semibold text-muted-foreground">
                                                     November 6, 2025
                                                 </span>
                                             </div>
@@ -140,7 +140,7 @@ export default function AboutSection() {
                             </CarouselItem>
 
                             {newsItems.map((item) => (
-                                <CarouselItem key={item.id} className="pl-4 basis-[50%] md:basis-[40%]">
+                                <CarouselItem key={item.id} className="pl-4 basis-[85%] md:basis-[40%]">
                                     <NewsCard
                                         image={item.image}
                                         category={item.category}
